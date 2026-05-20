@@ -1,948 +1,383 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:0cm;
-	margin-right:0cm;
-	margin-bottom:8.0pt;
-	margin-left:0cm;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-.MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
-.MsoPapDefault
-	{margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:595.3pt 841.9pt;
-	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Perch</title>
+  <script data-goatcounter="https://steffenhuck.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Spectral+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4edd8;
+      --charcoal-dark: #111111;
+      --charcoal-mid: #282828;
+      --charcoal-light: #484848;
+      --charcoal-muted: #686868;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--charcoal-mid);
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.9;
+      padding: 4rem 1.5rem 7rem;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .masthead {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-family: 'Spectral', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--charcoal-dark);
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-family: 'Spectral', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--charcoal-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+    }
+
+    .perch-image {
+      display: block;
+      margin: 0 auto 2.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .cast-block {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 0.5rem 0;
+    }
+
+    .cast-heading {
+      font-family: 'Spectral SC', serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--charcoal-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .cast-list {
+      font-family: 'Spectral SC', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--charcoal-muted);
+      letter-spacing: 0.1em;
+    }
+
+    .play {
+      margin-top: 1rem;
+    }
+
+    .stage {
+      font-style: italic;
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.85;
+      margin: 1.3rem 0 0.6rem;
+      line-height: 1.75;
+    }
+
+    .beat {
+      font-style: italic;
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.85;
+      margin: 0.7rem 0;
+    }
+
+    .sd {
+      font-style: italic;
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.85;
+    }
+
+    .speaker {
+      font-family: 'Spectral SC', serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--charcoal-dark);
+      margin-top: 1.6rem;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    .line {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--charcoal-mid);
+      margin: 0 0 0.1rem 0;
+      line-height: 1.85;
+    }
+
+    .author {
+      margin-top: 5rem;
+      text-align: center;
+      font-family: 'Spectral', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--charcoal-muted);
+      letter-spacing: 0.18em;
+    }
+
+    .author a {
+      color: var(--charcoal-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .author a:hover {
+      color: var(--charcoal-dark);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.1rem;
+        padding: 2.5rem 1.2rem 5rem;
+      }
+      h1 {
+        font-size: 2.8rem;
+      }
+      .line {
+        font-size: 1.1rem;
+      }
+      .perch-image {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body lang=DE>
+<div class="masthead">
+  <h1>The Perch</h1>
+  <div class="subtitle">A Play</div>
+  <img class="perch-image" src="perch.png" alt="A perch">
+</div>
 
-<div class=WordSection1>
+<div class="cast-block">
+  <div class="cast-heading">CAST</div>
+  <div class="cast-list">The First Student Â· The New Student</div>
+</div>
 
-<p class=MsoNormal>&lt;!DOCTYPE html&gt;</p>
+<div class="play">
 
-<p class=MsoNormal>&lt;html lang=&quot;en&quot;&gt;</p>
+  <p class="stage">(A Sunday. Glorious weather. The New Student and the First Student in a small rowing boat on the lake. The First Student holds a fishing rod.)</p>
 
-<p class=MsoNormal><span lang=EN-US>&lt;head&gt;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">I can feel something.</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p>
+  <p class="stage">(They both look at the line. It begins to move.)</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;meta name=&quot;viewport&quot;
-content=&quot;width=device-width, initial-scale=1&quot;&gt;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">I think it's a little one.</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;title&gt;The Perch&lt;/title&gt;</span></p>
+  <p class="stage">(The line goes slack and still.)</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;script
-data-goatcounter=&quot;https://steffenhuck.goatcounter.com/count&quot; async
-src=&quot;https://gc.zgo.at/count.js&quot;&gt;&lt;/script&gt;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Let's wait for a bigger one.</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;link
-href=&quot;https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&amp;family=Spectral+SC:wght@300;400;500;600&amp;display=swap&quot;
-rel=&quot;stylesheet&quot;&gt;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I feel like I'm on the hook.</p>
 
-<p class=MsoNormal><span lang=EN-US>  &lt;style&gt;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Because of that surprise visit the other day?</p>
 
-<p class=MsoNormal><span lang=EN-US>    :root {</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">Yes. It was such an embarrassment. I can see it in the others' eyes.</p>
 
-<p class=MsoNormal><span lang=EN-US>      --bg: #f4edd8;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Papperlapp.</p>
 
-<p class=MsoNormal><span lang=EN-US>      --charcoal-dark: #111111;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">Easy for you to say.</p>
 
-<p class=MsoNormal><span lang=EN-US>      --charcoal-mid: #282828;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">I only speak the truth.</p>
 
-<p class=MsoNormal><span lang=EN-US>      --charcoal-light: #484848;</span></p>
+  <p class="beat">(A beat.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      --charcoal-muted: #686868;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Always.</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">Don't tell me you never lie.</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Not in the common sense.</p>
 
-<p class=MsoNormal><span lang=EN-US>    * {</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">She told me she had only accepted because she wanted to look after me. To see if I'm happy here.</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin: 0;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Are you?</p>
 
-<p class=MsoNormal><span lang=EN-US>      padding: 0;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I'm not sure. Right now, on this lake... with you... I am.</p>
 
-<p class=MsoNormal><span lang=EN-US>      box-sizing: border-box;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Good to hear.</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <p class="stage">(The line begins to move violently.)</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Oh, that's a big one!</p>
 
-<p class=MsoNormal><span lang=EN-US>    body {</span></p>
+  <p class="stage">(The line pulls hard. The rod bends. The boat rocks. There is a struggle for a minute.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      background-color: var(--bg);</span></p>
+  <p class="stage">(The line goes slack.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-mid);</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Gone.</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral', Georgia,
-serif;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I thought this would be easier.</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-size: 1.25rem;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">It's always a struggle.</p>
 
-<p class=MsoNormal><span lang=EN-US>      line-height: 1.9;</span></p>
+  <p class="beat">(A beat.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      padding: 4rem 1.5rem 7rem;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Everything is.</p>
 
-<p class=MsoNormal><span lang=EN-US>      max-width: 660px;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">You make it look so easy.</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin: 0 auto;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">The fishing?</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">It's as if... you belong here.</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Me? The scholarship boy?</p>
 
-<p class=MsoNormal><span lang=EN-US>    .masthead {</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">Yes. You.</p>
 
-<p class=MsoNormal><span lang=EN-US>      text-align: center;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">I'm taking in as much as I can.</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 2.5rem;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I hope I'm going to survive next week.</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">You will.</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">You are always so... so confident.</p>
 
-<p class=MsoNormal><span lang=EN-US>    h1 {</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">When it comes to you and your mum, I am.</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral', serif;</span></p>
+  <p class="beat">(A beat.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      </span>font-size: 3.8rem;</p>
+  <span class="speaker">The New Student</span>
+  <p class="line">Didn't you find her small... next to Catherine?</p>
 
-<p class=MsoNormal>      font-weight: 700;</p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Not at all. She's the future.</p>
 
-<p class=MsoNormal>      <span lang=EN-US>color: var(--charcoal-dark);</span></p>
+  <p class="beat">(A beat.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      letter-spacing: 0.08em;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">And you will get your horse. I'd say there will be a trailer coming next week.</p>
 
-<p class=MsoNormal><span lang=EN-US>      line-height: 1.1;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">For a new movie?</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 0.4rem;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">With your horse.</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I very much doubt that.</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">You wanna bet?</p>
 
-<p class=MsoNormal><span lang=EN-US>    .subtitle {</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">A tenner?</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral', serif;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">It would be unethical of me to accept this.</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-style: italic;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I don't see why.</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-size: 1.6rem;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Do I really have to spell it out?</p>
 
-<p class=MsoNormal><span lang=EN-US>      font-weight: 600;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I'm quite lost. Why don't you?</p>
 
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-light);</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">I talked to a certain someone.</p>
 
-<p class=MsoNormal><span lang=EN-US>      letter-spacing: 0.04em;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">To him?</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 2rem;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Yes. To him.</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">And he will buy me a horse?</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Don't be so thick.</p>
 
-<p class=MsoNormal><span lang=EN-US>    .perch-image {</span></p>
+  <p class="stage">(The line begins to move. Not quite as violently as before, but the rod bends. A brief struggle ensues. The First Student brings out a fish, some thirty centimetres long.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      display: block;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">A perch!</p>
 
-<p class=MsoNormal><span lang=EN-US>      margin: 0 auto 2.5rem;</span></p>
+  <p class="stage">(The First Student takes the fish in his hands and holds it up.)</p>
 
-<p class=MsoNormal><span lang=EN-US>      width: 100%;</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Look at these colours.</p>
 
-<p class=MsoNormal><span lang=EN-US>      max-width: 500px;</span></p>
+  <p class="stage">(He unhooks it carefully.)</p>
 
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
+  <span class="speaker">The First Student</span>
+  <p class="line">Shall we give him back his freedom?</p>
 
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <span class="speaker">The New Student</span>
+  <p class="line">I think we should eat him.</p>
 
-<p class=MsoNormal><span lang=EN-US>    .cast-block {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      text-align: center;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 3rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      padding: 0.5rem 0;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .cast-heading {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral SC', serif;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      </span>font-size: 0.85rem;</p>
-
-<p class=MsoNormal>      font-weight: 500;</p>
-
-<p class=MsoNormal>      <span lang=EN-US>letter-spacing: 0.22em;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-light);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 0.4rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .cast-list {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral SC', serif;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      </span>font-size: 0.95rem;</p>
-
-<p class=MsoNormal>      font-weight: 400;</p>
-
-<p class=MsoNormal>      <span lang=EN-US>color: var(--charcoal-muted);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      letter-spacing: 0.1em;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .play {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-top: 1rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .stage {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-style: italic;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-size: 1.12rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-weight: 300;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-light);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      opacity: 0.85;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin: 1.3rem 0 0.6rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      line-height: 1.75;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .beat {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-style: italic;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-size: 1.12rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-weight: 300;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-light);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      opacity: 0.85;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin: 0.7rem 0;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .sd {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-style: italic;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      </span>font-size: 1.12rem;</p>
-
-<p class=MsoNormal>      font-weight: 300;</p>
-
-<p class=MsoNormal>      <span lang=EN-US>color: var(--charcoal-light);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      opacity: 0.85;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .speaker {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral SC', serif;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      </span>font-size: 0.82rem;</p>
-
-<p class=MsoNormal>      font-weight: 600;</p>
-
-<p class=MsoNormal>      <span lang=EN-US>letter-spacing: 0.16em;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-dark);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-top: 1.6rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-bottom: 0.15rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      display: block;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .line {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-size: 1.25rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-weight: 400;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-mid);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin: 0 0 0.1rem 0;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      line-height: 1.85;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .author {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      margin-top: 5rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      text-align: center;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-family: 'Spectral', serif;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-size: 0.95rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      font-weight: 300;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-muted);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      letter-spacing: 0.18em;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .author a {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-muted);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      text-decoration: none;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      transition: color 0.2s;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    .author a:hover {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      color: var(--charcoal-dark);</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    @media (max-width: 600px) {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      body {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>        font-size: 1.1rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>        padding: 2.5rem 1.2rem 5rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      h1 {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>        font-size: 2.8rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      .line {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>        font-size: 1.1rem;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      .perch-image {</span></p>
-
-<p class=MsoNormal><span lang=EN-US>        max-width: 100%;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>      }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>    }</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;/style&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;/head&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;body&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;div class=&quot;masthead&quot;&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;h1&gt;The Perch&lt;/h1&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;div class=&quot;subtitle&quot;&gt;A
-Play&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;img class=&quot;perch-image&quot;
-src=&quot;perch.png&quot; alt=&quot;A perch&quot;&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;div class=&quot;cast-block&quot;&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;div
-class=&quot;cast-heading&quot;&gt;CAST&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;div
-class=&quot;cast-list&quot;&gt;The First Student · The New Student&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;div class=&quot;play&quot;&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(A
-Sunday. Glorious weather. The New Student and the First Student in a small
-rowing boat on the lake. The First Student holds a fishing rod.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I can
-feel something.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(They both
-look at the line. It begins to move.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I think
-it's a little one.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-line goes slack and still.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Let's
-wait for a bigger one.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I feel
-like I'm on the hook.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Because
-of that surprise visit the other day?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Yes. It
-was such an embarrassment. I can see it in the others' eyes.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p
-class=&quot;line&quot;&gt;Papperlapp.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Easy for
-you to say.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I only
-speak the truth.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;beat&quot;&gt;(A
-beat.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Always.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Don't
-tell me you never lie.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Not in
-the common sense.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;She told
-me she had only accepted because she wanted to look after me. To see if I'm
-happy here.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Are
-you?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I'm not
-sure. Right now, on this lake... with you... I am.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Good to
-hear.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-line begins to move violently.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Oh,
-that's a big one!&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-line pulls hard. The rod bends. The boat rocks. There is a struggle for a
-minute.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-line goes slack.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p
-class=&quot;line&quot;&gt;Gone.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I thought
-this would be easier.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;It's
-always a struggle.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;beat&quot;&gt;(A
-beat.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p
-class=&quot;line&quot;&gt;Everything is.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;You make
-it look so easy.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;The
-fishing?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;It's as
-if... you belong here.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Me? The
-scholarship boy?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Yes.
-You.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I'm
-taking in as much as I can.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I hope
-I'm going to survive next week.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;You
-will.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;You are
-always so... so confident.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;When it
-comes to you and your mum, I am.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;beat&quot;&gt;(A
-beat.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Didn't
-you find her small... next to Catherine?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Not at
-all. She's the future.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;beat&quot;&gt;(A
-beat.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;And you
-will get your horse. I'd say there will be a trailer coming next
-week.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;For a new
-movie?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;With your
-horse.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I very
-much doubt that.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;You wanna
-bet?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;A
-tenner?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;It would
-be unethical of me to accept this.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I don't
-see why.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Do I
-really have to spell it out?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I'm quite
-lost. Why don't you?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I talked
-to a certain someone.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;To
-him?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Yes. To
-him.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;And he
-will buy me a horse?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Don't be
-so thick.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-line begins to move. Not quite as violently as before, but the rod bends. A
-brief struggle ensues. The First Student brings out a fish, some thirty
-centimetres long.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;A
-perch!&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-First Student takes the fish in his hands and holds it up.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Look at
-these colours.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(He
-unhooks it carefully.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-First Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;Shall we
-give him back his freedom?&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;span class=&quot;speaker&quot;&gt;The
-New Student&lt;/span&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;line&quot;&gt;I think
-we should eat him.&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;p class=&quot;stage&quot;&gt;(The
-First Student kills the fish with a sharp blow to the head.)&lt;/p&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;/div&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&lt;div class=&quot;author&quot;&gt;</span></p>
-
-<p class=MsoNormal><span lang=EN-US>  &lt;a
-href=&quot;https://steffenhuck.github.io/&quot;
-data-goatcounter-click=&quot;author-link&quot;&gt;steffen huck&lt;/a&gt;</span></p>
-
-<p class=MsoNormal>&lt;/div&gt;</p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-<p class=MsoNormal>&lt;/body&gt;</p>
-
-<p class=MsoNormal>&lt;/html&gt;</p>
+  <p class="stage">(The First Student kills the fish with a sharp blow to the head.)</p>
 
 </div>
 
-</body>
+<div class="author">
+  <a href="https://steffenhuck.github.io/" data-goatcounter-click="author-link">steffen huck</a>
+</div>
 
+</body>
 </html>
