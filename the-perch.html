@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Perch</title>
+  <script data-goatcounter="https://steffenhuck.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ede5cc;
+      --charcoal-dark: #1e1e1e;
+      --charcoal-mid: #2e2e2e;
+      --charcoal-light: #555550;
+      --charcoal-muted: #888880;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--charcoal-mid);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.9;
+      padding: 4rem 1.5rem 7rem;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* Masthead */
+    .masthead {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--charcoal-dark);
+      letter-spacing: 0.12em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      letter-spacing: 0.04em;
+      opacity: 0.8;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Perch image */
+    .perch-image {
+      display: block;
+      margin: 0 auto 2rem;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* Cast block */
+    .cast-block {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-top: 1px solid var(--charcoal-muted);
+      border-bottom: 1px solid var(--charcoal-muted);
+      padding: 1rem 0;
+      opacity: 0.7;
+    }
+
+    .cast-heading {
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--charcoal-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .cast-list {
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--charcoal-muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Play body */
+    .play {
+      margin-top: 1rem;
+    }
+
+    /* Stage directions */
+    .stage {
+      font-style: italic;
+      font-size: 1.08rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.72;
+      margin: 1.3rem 0 0.6rem;
+      line-height: 1.75;
+    }
+
+    .beat {
+      font-style: italic;
+      font-size: 1.08rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.72;
+      margin: 0.7rem 0;
+    }
+
+    /* Inline stage direction */
+    .sd {
+      font-style: italic;
+      font-size: 1.08rem;
+      font-weight: 300;
+      color: var(--charcoal-light);
+      opacity: 0.72;
+    }
+
+    /* Speaker tag */
+    .speaker {
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--charcoal-dark);
+      margin-top: 1.6rem;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    /* Spoken lines */
+    .line {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--charcoal-mid);
+      margin: 0 0 0.1rem 0;
+      line-height: 1.85;
+    }
+
+    /* Author */
+    .author {
+      margin-top: 5rem;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--charcoal-muted);
+      opacity: 0.75;
+      letter-spacing: 0.06em;
+    }
+
+    .author a {
+      color: var(--charcoal-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--charcoal-muted);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .author a:hover {
+      color: var(--charcoal-dark);
+      border-color: var(--charcoal-dark);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 1.05rem;
+        padding: 2.5rem 1.2rem 5rem;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .line {
+        font-size: 1.05rem;
+      }
+      .perch-image {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="masthead">
+  <h1>The Perch</h1>
+  <div class="subtitle">A Play</div>
+  <img class="perch-image" src="perch.png" alt="A perch">
+</div>
+
+<div class="cast-block">
+  <div class="cast-heading">CAST</div>
+  <div class="cast-list">The First Student · The New Student</div>
+</div>
+
+<div class="play">
+
+  <p class="stage">(A Sunday. Glorious weather. The New Student and the First Student in a small rowing boat on the lake. The First Student holds a fishing rod.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">I can feel something.</p>
+
+  <p class="stage">(They both look at the line. It begins to move.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">I think it's a little one.</p>
+
+  <p class="stage">(The line goes slack and still.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Let's wait for a bigger one.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I feel like I'm on the hook.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Because of that surprise visit the other day?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">Yes. It was such an embarrassment. I can see it in the others' eyes.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Papperlapp.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">Easy for you to say.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">I only speak the truth.</p>
+
+  <p class="beat">(A beat.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Always.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">Don't tell me you never lie.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Not in the common sense.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">She told me she had only accepted because she wanted to look after me. To see if I'm happy here.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Are you?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I'm not sure. Right now, on this lake... with you... I am.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Good to hear.</p>
+
+  <p class="stage">(The line begins to move violently.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Oh, that's a big one!</p>
+
+  <p class="stage">(The line pulls hard. The rod bends. The boat rocks. There is a struggle for a minute.)</p>
+
+  <p class="stage">(The line goes slack.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Gone.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I thought this would be easier.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">It's always a struggle.</p>
+
+  <p class="beat">(A beat.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Everything is.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">You make it look so easy.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">The fishing?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">It's as if... you belong here.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Me? The scholarship boy?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">Yes. You.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">I'm taking in as much as I can.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I hope I'm going to survive next week.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">You will.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">You are always so... so confident.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">When it comes to you and your mum, I am.</p>
+
+  <p class="beat">(A beat.)</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">Didn't you find her small... next to Catherine?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Not at all. She's the future.</p>
+
+  <p class="beat">(A beat.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">And you will get your horse. I'd say there will be a trailer coming next week.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">For a new movie?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">With your horse.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I very much doubt that.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">You wanna bet?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">A tenner?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">It would be unethical of me to accept this.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I don't see why.</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Do I really have to spell it out?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I'm quite lost. Why don't you?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">I talked to a certain someone.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">To him?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Yes. To him.</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">And he will buy me a horse?</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Don't be so thick.</p>
+
+  <p class="stage">(The line begins to move. Not quite as violently as before, but the rod bends. A brief struggle ensues. The First Student brings out a fish, some thirty centimetres long.)</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">A perch!</p>
+
+  <p class="stage">(The First Student takes the fish in his hands and holds it up.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Look at these colours.</p>
+
+  <p class="stage">(He unhooks it carefully.)</p>
+
+  <span class="speaker">The First Student</span>
+  <p class="line">Shall we give him back his freedom?</p>
+
+  <span class="speaker">The New Student</span>
+  <p class="line">I think we should eat him.</p>
+
+  <p class="stage">(The First Student kills the fish with a sharp blow to the head.)</p>
+
+</div>
+
+<div class="author">
+  <a href="https://steffenhuck.github.io/" data-goatcounter-click="author-link">steffen huck</a>
+</div>
+
+</body>
+</html>
